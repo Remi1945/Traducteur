@@ -1,0 +1,191 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 589
+  ClientWidth = 678
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object MenuBar1: TMenuBar
+    Size.Width = 678.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object MenuItem1: TMenuItem
+      Text = 'R'#233'pertoire'
+    end
+    object MenuItem2: TMenuItem
+      Text = 'Sauvegarder'
+    end
+  end
+  object Panel1: TPanel
+    Align = Client
+    Size.Width = 678.000000000000000000
+    Size.Height = 565.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lbRef: TListBox
+      Align = Client
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Size.Width = 658.000000000000000000
+      Size.Height = 390.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnChange = lbRefChange
+      Viewport.Width = 654.000000000000000000
+      Viewport.Height = 386.000000000000000000
+    end
+    object Layout1: TLayout
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 678.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object btnAjoutRef: TButton
+        Align = Right
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 578.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Ajouter'
+        TextSettings.Trimming = None
+      end
+      object edNouvRef: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 10
+        Size.Width = 493.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label1: TLabel
+        Align = Left
+        Margins.Left = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Trimming = None
+        Text = 'R'#233'f'#233'rences'
+        TabOrder = 1
+      end
+    end
+    object Layout2: TLayout
+      Align = Bottom
+      Position.Y = 485.000000000000000000
+      Size.Width = 678.000000000000000000
+      Size.Height = 80.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Layout3: TLayout
+        Align = Top
+        Size.Width = 678.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object cbLangue1: TComboBox
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          OnChange = lbRefChange
+        end
+        object edLangue1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 4
+          Margins.Left = 5.000000000000000000
+          Size.Width = 522.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object btnValide1: TButton
+          Align = Right
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 607.000000000000000000
+          Size.Width = 61.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          Text = 'Valider'
+          TextSettings.Trimming = None
+          OnClick = btnValide1Click
+        end
+      end
+      object Layout4: TLayout
+        Align = Top
+        Margins.Top = 10.000000000000000000
+        Position.Y = 35.000000000000000000
+        Size.Width = 678.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object cbLangue2: TComboBox
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          OnChange = lbRefChange
+        end
+        object edLangue2: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 2
+          Margins.Left = 5.000000000000000000
+          Size.Width = 522.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object btnValide2: TButton
+          Align = Right
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 607.000000000000000000
+          Size.Width = 61.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          Text = 'Valider'
+          TextSettings.Trimming = None
+          OnClick = btnValide1Click
+        end
+      end
+    end
+    object Layout5: TLayout
+      Align = Bottom
+      Position.Y = 435.000000000000000000
+      Size.Width = 678.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object btnSuppRef: TButton
+        Align = Center
+        TabOrder = 9
+        Text = 'Supprimer'
+        TextSettings.Trimming = None
+        OnClick = btnSuppRefClick
+      end
+    end
+  end
+end

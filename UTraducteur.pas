@@ -50,7 +50,7 @@ var
 begin
   lesTraduc := TDictionary<string, TTraduc>.Create;
   slngref := '';
-  Fichiers := TDirectory.GetFiles(rep + '\Langues', '*.json');
+  Fichiers := TDirectory.GetFiles(rep , '*.json');
   for nomF in Fichiers do
   begin
     s := ExtractFileName(nomF);

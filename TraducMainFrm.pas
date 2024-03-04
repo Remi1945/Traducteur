@@ -29,15 +29,18 @@ type
     Layout5: TLayout;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
+    dlgSelDir: TOpenDialog;
     procedure FormCreate(Sender: TObject);
     procedure lbRefChange(Sender: TObject);
     procedure btnValide1Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure btnSuppRefClick(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
   private
     { Déclarations privées }
     trad: TTraducteur;
-
+    rep: String;
   public
     { Déclarations publiques }
   end;
@@ -95,31 +98,11 @@ begin
 end;
 
 procedure TForm3.FormCreate(Sender: TObject);
-var
-  s: string;
-  refs: TStringList;
+
 begin
-  trad := TTraducteur.Create('D:\Projets\Delphi\amiraute2\');
-  refs := TStringList.Create;
-  trad.ref2Liste(refs);
-  lbRef.Clear;
-  lbRef.BeginUpdate;
-  for s in refs do
-  begin
-    lbRef.Items.Add(s);
-  end;
-  lbRef.EndUpdate;
-  refs.Clear;
-  trad.langues2Liste(refs);
-  cbLangue1.BeginUpdate;
-  cbLangue2.BeginUpdate;
-  for s in refs do
-  begin
-    cbLangue1.Items.Add(s);
-    cbLangue2.Items.Add(s);
-  end;
-  cbLangue1.EndUpdate;
-  cbLangue2.EndUpdate;
+  trad := nil;
+  panel1.Visible:=false;
+  rep:='';
 end;
 
 procedure TForm3.lbRefChange(Sender: TObject);
@@ -141,6 +124,49 @@ begin
       edLangue2.Text := trad.traduit(scode, sref);
     end;
   end;
+end;
+
+procedure TForm3.MenuItem1Click(Sender: TObject);
+var
+  nf: string;
+
+  s: string;
+  refs: TStringList;
+begin
+  if dlgSelDir.Execute then
+  begin
+    rep := ExtractFileDir(dlgSelDir.FileName);
+    if trad <> nil then
+      trad.Free;
+    trad := TTraducteur.Create(rep);
+    refs := TStringList.Create;
+    trad.ref2Liste(refs);
+    lbRef.Clear;
+    lbRef.BeginUpdate;
+    for s in refs do
+    begin
+      lbRef.Items.Add(s);
+    end;
+    lbRef.EndUpdate;
+    refs.Clear;
+    trad.langues2Liste(refs);
+    cbLangue1.BeginUpdate;
+    cbLangue2.BeginUpdate;
+    for s in refs do
+    begin
+      cbLangue1.Items.Add(s);
+      cbLangue2.Items.Add(s);
+    end;
+    cbLangue1.EndUpdate;
+    cbLangue2.EndUpdate;
+    Panel1.Visible := true;
+  end;
+end;
+
+procedure TForm3.MenuItem2Click(Sender: TObject);
+begin
+  if trad <> nil then
+    trad.Sauve(rep);
 end;
 
 end.

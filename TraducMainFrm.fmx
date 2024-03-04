@@ -16,9 +16,11 @@ object Form3: TForm3
     TabOrder = 0
     object MenuItem1: TMenuItem
       Text = 'R'#233'pertoire'
+      OnClick = MenuItem1Click
     end
     object MenuItem2: TMenuItem
       Text = 'Sauvegarder'
+      OnClick = MenuItem2Click
     end
   end
   object Panel1: TPanel
@@ -187,5 +189,9 @@ object Form3: TForm3
         OnClick = btnSuppRefClick
       end
     end
+  end
+  object dlgSelDir: TOpenDialog
+    Left = 426
+    Top = 341
   end
 end
